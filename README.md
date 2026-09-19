@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nagarjuna Reddy's personal portfolio — a React single-page site with an animated aurora-themed hero, scroll-reveal sections, typewriter role text, magnetic buttons, 3D-tilt project cards, and a skills marquee.
 
-## Available Scripts
+**Live:** https://nagarjuna-portfolio-vue9.onrender.com/
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- React 19 (Create React App)
+- Plain CSS (custom properties, no framework) for the aurora gradient theme, animations, and layout
+- No backend — fully static site
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+  components/   Navbar, Hero, About, Skills, Projects, Contact, Footer, CustomCursor
+  data/         portfolioData.js — name, bio, skills, projects, social links
+  hooks/        useScrollReveal, useMagnetic, useTypewriter
+  pages/        Home.js — composes all sections
+```
 
-### `npm test`
+Edit [src/data/portfolioData.js](src/data/portfolioData.js) to update profile info, skills, or projects.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running it
 
-### `npm run build`
+```bash
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Opens on http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploying (Render, free)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This is a fully static site, so it deploys anywhere that hosts static files for free. [render.yaml](render.yaml) is already configured for Render:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Push to GitHub.
+2. Sign up at https://render.com with GitHub — no card needed.
+3. **New +** → **Blueprint** → pick this repo. Render auto-detects `render.yaml`.
+4. Build command: `npm install && npm run build`. Publish directory: `build`.
